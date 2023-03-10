@@ -12,27 +12,28 @@ import javax.swing.JOptionPane;
  * @author umg
  */
 public class Lista {
-Nodo primero;
-Nodo Auxiliar;
+Paciente siguiente;
+Paciente primero;
+Paciente Auxiliar;
 String cadena = "";
 
 public void Apilar()
 {
     
 }
-public void Apilar(int dato)
+public void Agregar(String apellido, String nombre)
 {
-    Nodo nuevoNodo = new Nodo(dato);
+    Paciente nuevoPaciente = new Paciente(apellido, nombre );
     if(primero == null)
     {
-        primero = nuevoNodo;
+        primero = nuevoPaciente;
     }
     else 
     {
-        nuevoNodo.siguiente = primero;
-        primero = nuevoNodo;
+        nuevoPaciente.siguiente = primero;
+        primero = nuevoPaciente;
     }
-    JOptionPane.showMessageDialog(null, "Nodo Apilado");
+    JOptionPane.showMessageDialog(null, "Paciente Agregado");
 }
 
 public String Listar()
@@ -42,8 +43,9 @@ public String Listar()
  while(Auxiliar != null)
  {
      
-     cadena = cadena  + Auxiliar.getDato()+" ";
+     cadena = " " + Auxiliar.getApellido() + " " + Auxiliar.getNombre()+ "\n" + cadena;
      Auxiliar = Auxiliar.siguiente;
+     
  }
  return cadena;
 }

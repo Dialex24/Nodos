@@ -1,7 +1,8 @@
 
-import controladores.NodoController;
+import controladores.PacienteController;
 import modelos.Lista;
-import vistas.frmNodos;
+import vistas.frmListaPacientes;
+import vistas.frmPacientes;
 import vistas.frmPrincipal;
 
 /*
@@ -22,11 +23,12 @@ public class main {
     public static void main(String[] args) {
         // TODO code application logic here
         frmPrincipal VistaPrincipal = new frmPrincipal();
-        frmNodos VistaNodos = new frmNodos(VistaPrincipal,true);
+        frmPacientes VistaPacientes = new frmPacientes(VistaPrincipal,true);
+        frmListaPacientes VistaLista = new frmListaPacientes(VistaPrincipal, true);
         Lista NuevaLista = new Lista();
         
         //levatnar el controlador
-        NodoController NuevoControlador = new NodoController(VistaPrincipal, VistaNodos,NuevaLista);
+        PacienteController NuevoControlador = new PacienteController(VistaPrincipal, VistaPacientes, VistaLista, NuevaLista);
     }
     
 }
